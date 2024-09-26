@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity register8 is
+    Port (
+        clk     : in  STD_LOGIC;                     -- Clock signal
+        reset   : in  STD_LOGIC;                     -- Reset signal
+        data_in : in  STD_LOGIC_VECTOR(7 downto 0);  -- 8-bit input data
+        q       : out STD_LOGIC_VECTOR(7 downto 0)   -- 8-bit output data (register content)
+    );
+end register8;
+
+architecture Behavioral of register8 is
+    signal reg : STD_LOGIC_VECTOR(7 downto 0); -- Internal register signal
+begin
+    process (clk, reset)
+    begin
+        if reset = '1' then
+            reg <= (others => '0');  -- Reset register to 0
+        elsif rising_edge(clk) then
+            reg <= data_in;          -- Load input data into the register on rising clock edge
+        end if;
+    end process;
+
+    q <= reg; -- Assign internal register value to output
+end Behavioral;

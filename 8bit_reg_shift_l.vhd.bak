@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity shift_register_left is
+    Port (
+        clk   : in  STD_LOGIC;          -- Clock signal
+        reset : in  STD_LOGIC;          -- Reset signal
+        load  : in  STD_LOGIC;          -- Load signal to load data
+        data_in : in  STD_LOGIC_VECTOR(7 downto 0); -- Input data
+        shift_left : in  STD_LOGIC;     -- Shift left control signal
+        q     : out STD_LOGIC_VECTOR(7 downto 0)   -- Output data (register content)
+    );
+end shift_register_left;
+
+architecture Behavioral of shift_register_left is
+    signal reg : STD_LOGIC_VECTOR(7 downto 0); -- Internal register signal
+begin
+    process (clk, reset)
+    begin
+        if reset = '1' then
+            reg <= (others => '0');  -- Reset register to 0
+        elsif rising_edge(clk) then
+            if load = '1' then
+                reg <= data_in;       -- Load data into register
+            elsif shift_left = '1' then
+                reg <= reg(6 downto 0) & '0'; -- Shift left, filling LSB with '0'
+            end if;
+        end if;
+    end process;
+
+    q <= reg; -- Assign internal register value to output
+end Behavioral;

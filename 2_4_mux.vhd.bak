@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity mux2x4 is
+    Port (
+        data0 : in  STD_LOGIC_VECTOR(3 downto 0); -- First 4-bit input
+        data1 : in  STD_LOGIC_VECTOR(3 downto 0); -- Second 4-bit input
+        sel   : in  STD_LOGIC;                    -- Selection signal
+        y     : out STD_LOGIC_VECTOR(3 downto 0)  -- 4-bit output
+    );
+end mux2x4;
+
+architecture Behavioral of mux2x4 is
+begin
+    process (data0, data1, sel)
+    begin
+        if sel = '0' then
+            y <= data0;  -- Pass data0 when sel is '0'
+        else
+            y <= data1;  -- Pass data1 when sel is '1'
+        end if;
+    end process;
+end Behavioral;

@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+ENTITY DFF IS
+	PORT(
+		i_d			: IN	STD_LOGIC;
+		i_clock			: IN	STD_LOGIC;
+		o_q, o_qBar		: OUT	STD_LOGIC);
+END DFF;
+
+ARCHITECTURE rtl OF DFF IS
+	SIGNAL int_q, int_qBar : STD_LOGIC;
+	SIGNAL int_d, int_dBar : STD_LOGIC;
+	SIGNAL int_notD, int_notClock : STD_LOGIC;
+
+	COMPONENT enabledSRLatch
+		PORT(
+			i_set, i_reset	: IN	STD_LOGIC;
+			i_enable	: IN	STD_LOGIC;
+			o_q, o_qBar	: OUT	STD_LOGIC);
+	END COMPONENT;
+
+-- 8-bit Register entity
+entity Register8bit is
+    Port (
+        CLK   : in  STD_LOGIC;
+        LD    : in  STD_LOGIC;
+        D_in  : in  STD_LOGIC_VECTOR (7 downto 0);
+        Q_out : out STD_LOGIC_VECTOR (7 downto 0)
+    );
+end Register8bit;
+
+architecture structural of Register8bit is
+    -- Internal signals for the outputs of each D flip-flop
+    signal Q : STD_LOGIC_VECTOR (7 downto 0);
+begin
+
+	sr0: entity work.enabledSRLatch port man ()
+    -- Instantiating 8 D flip-flops to form an 8-bit register
+    U0: entity work.DFF port map (i_d => D_in(0), i_clock => CLK, LD => LD, o_q => Q(0));
+
+    -- Output of the register
+    Q_out <= o_q;
+
+end structural;
