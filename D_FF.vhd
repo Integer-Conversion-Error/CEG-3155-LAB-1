@@ -10,6 +10,7 @@ ENTITY DFF IS
     );
 END DFF;
 
+
 ARCHITECTURE structural OF DFF IS
     SIGNAL int_q, int_qBar : STD_LOGIC;
     SIGNAL int_dBar        : STD_LOGIC;
