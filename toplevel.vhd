@@ -15,7 +15,7 @@ ARCHITECTURE structural OF displayController IS
  signal Disp_in : STD_LOGIC_VECTOR(7 downto 0);
  signal L_out : STD_LOGIC_VECTOR(7 downto 0);
  signal R_out : STD_LOGIC_VECTOR(7 downto 0);
--- signal R_L_out: STD_LOGIC_VECTOR(7 downto 0);
+ signal D_out: STD_LOGIC_VECTOR(7 downto 0);
  
  
 
@@ -54,16 +54,16 @@ s3: entity work.D_FF port map(
 
 shiftr: entity work.8bit_reg_shift_r port map (
 	CLK => GClock, 
-	LD => S0_out, 
-	SHR => S4_out OR S2_out, 
+	LD => s0_out, 
+	SHR => s4_out OR s2_out, 
 	D_in => "10000000", 
 	Q_out => R_out
 );
 
 shiftl: entity work.8bit_reg_shift_l port map (
 	CLK => GClock, 
-	LD => S0_out, 
-	SHL => S4_out OR S3_out, 
+	LD => s0_out, 
+	SHL => s4_out OR s3_out, 
 	D_in => "00000001", 
 	Q_out => L_out
 );
@@ -76,10 +76,12 @@ mux: entity work.2_4_mux.vhd port map (
 
 dispreg: entity work.8bit_reg port map (
 	CLK => GClock, 
-	LD => S0_out, 
-	D_in => , 
-	Q_out => L_out
+	LD => s0_out or s1_out or s2_out or s3_out or s4_out, 
+	D_in => Disp_in, 
+	Q_out => D_out
 );
+
+DisplayOut <= D_out;
 
 END structural;
 
