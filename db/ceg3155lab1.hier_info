@@ -1,0 +1,171 @@
+|eight_bit_reg_shift_r
+CLK => d_ff:loop0:0:Un.i_clock
+CLK => d_ff:loop0:1:Un.i_clock
+CLK => d_ff:loop0:2:Un.i_clock
+CLK => d_ff:loop0:3:Un.i_clock
+CLK => d_ff:loop0:4:Un.i_clock
+CLK => d_ff:loop0:5:Un.i_clock
+CLK => d_ff:loop0:6:Un.i_clock
+CLK => d_ff:U7.i_clock
+LD => ~NO_FANOUT~
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => Qt.IN1
+SHR => comb.IN1
+D_in[0] => ~NO_FANOUT~
+D_in[1] => ~NO_FANOUT~
+D_in[2] => ~NO_FANOUT~
+D_in[3] => ~NO_FANOUT~
+D_in[4] => ~NO_FANOUT~
+D_in[5] => ~NO_FANOUT~
+D_in[6] => ~NO_FANOUT~
+D_in[7] => ~NO_FANOUT~
+QR_out[0] <= d_ff:loop0:0:Un.o_q
+QR_out[1] <= d_ff:loop0:1:Un.o_q
+QR_out[2] <= d_ff:loop0:2:Un.o_q
+QR_out[3] <= d_ff:loop0:3:Un.o_q
+QR_out[4] <= d_ff:loop0:4:Un.o_q
+QR_out[5] <= d_ff:loop0:5:Un.o_q
+QR_out[6] <= d_ff:loop0:6:Un.o_q
+QR_out[7] <= d_ff:U7.o_q
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:0:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:0:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:1:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:1:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:2:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:2:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:3:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:3:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:4:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:4:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:5:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:5:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:6:Un
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:\loop0:6:Un|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eight_bit_reg_shift_r|D_FF:U7
+i_d => s_gatedClock.IN0
+i_d => r_gatedClock.IN0
+i_clock => s_gatedClock.IN1
+i_clock => r_gatedClock.IN1
+o_q <= srLatch:U1.o_q
+o_qBar <= srLatch:U1.o_qBar
+
+
+|eight_bit_reg_shift_r|D_FF:U7|srLatch:U1
+i_set => int_qBar.IN0
+i_reset => int_q.IN1
+o_q <= o_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_qBar.DB_MAX_OUTPUT_PORT_TYPE
+
+

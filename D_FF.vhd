@@ -1,17 +1,17 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY DFF IS
+ENTITY D_FF IS
     PORT(
         i_d      : IN  STD_LOGIC;        
         i_clock  : IN  STD_LOGIC;        
         o_q      : OUT STD_LOGIC;        
         o_qBar   : OUT STD_LOGIC         
     );
-END DFF;
+END D_FF;
 
 
-ARCHITECTURE structural OF DFF IS
+ARCHITECTURE structural OF D_FF IS
     SIGNAL int_q, int_qBar : STD_LOGIC;
     SIGNAL int_dBar        : STD_LOGIC;
     SIGNAL s_gatedClock, r_gatedClock : STD_LOGIC;
