@@ -30,81 +30,14 @@ begin
 	 
 		--Qt(7) <= ((Q(7) AND NOT(SHL)) OR ('0' AND SHL));
 		--U7: entity work.D_FF port map (i_d => ((Q(7) AND NOT(SHL)) OR ('0' AND SHL)), i_clock => CLK, o_q => Q(7));
-	U0: entity work.d_flipflop port map (
-		d => ((Q(0) AND NOT(SHL)) OR (Q(1) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 1
-		clear => '0',
-		q => Q(0),
-		q_not => open
-	);
-
-	U1: entity work.d_flipflop port map (
-		d => ((Q(1) AND NOT(SHL)) OR (Q(2) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(1),
-		q_not => open
-	);
-
-	U2: entity work.d_flipflop port map (
-		d => ((Q(2) AND NOT(SHL)) OR (Q(3) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(2),
-		q_not => open
-	);
-
-	U3: entity work.d_flipflop port map (
-		d => ((Q(3) AND NOT(SHL)) OR (Q(4) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(3),
-		q_not => open
-	);
-
-	U4: entity work.d_flipflop port map (
-		d => ((Q(4) AND NOT(SHL)) OR (Q(5) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(4),
-		q_not => open
-	);
-
-	U5: entity work.d_flipflop port map (
-		d => ((Q(5) AND NOT(SHL)) OR (Q(6) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(5),
-		q_not => open
-	);
-
-	U6: entity work.d_flipflop port map (
-		d => ((Q(6) AND NOT(SHL)) OR (Q(7) AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(6),
-		q_not => open
-	);
-
-	U7: entity work.d_flipflop port map (
-		d => ((Q(7) AND NOT(SHL)) OR ('0' AND SHL)),
-		clk => CLK,
-		preset => '0',   -- Preset to 0
-		clear => '0',
-		q => Q(7),
-		q_not => open
-	);
-
-    --U7: entity work.D_FF port map (i_d => (Q(7) AND NOT(SHL)) OR (Q(6) AND SHL), i_clock => CLK, o_q => Q_out(7));
-
-    -- Connect the internal signal Q to the output of the register
-    Q_out <= Q;
-
+		 
+		 U7: entity work.D_FF port map (i_d => ((Q(0) AND NOT(SHL)) OR ('0' AND SHL)), i_clock => CLK, o_q => Q(7));
+		 loop0: for i in 0 to 6 generate
+			Un: entity work.D_FF port map (i_d => ((Q(i) AND NOT(SHL)) OR (Q(i+1) AND SHL)), i_clock => CLK, o_q => Q(i));	
+				
+    end generate;
+	 
+	--Qt(7) <= ((Q(7) AND NOT(SHR)) OR ('0' AND SHR));
+	
+	Q_out <= Q;
 end structural;

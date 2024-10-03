@@ -2,25 +2,25 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module eight_bit_reg_shift_r
+# -- Compiling module eight_bit_reg_shift_l
 # 
 # Top level modules:
-# 	eight_bit_reg_shift_r
+# 	eight_bit_reg_shift_l
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module eight_bit_reg_shift_r_vlg_sample_tst
-# -- Compiling module eight_bit_reg_shift_r_vlg_check_tst
-# -- Compiling module eight_bit_reg_shift_r_vlg_vec_tst
+# -- Compiling module eight_bit_reg_shift_l_vlg_sample_tst
+# -- Compiling module eight_bit_reg_shift_l_vlg_check_tst
+# -- Compiling module eight_bit_reg_shift_l_vlg_vec_tst
 # 
 # Top level modules:
-# 	eight_bit_reg_shift_r_vlg_vec_tst
-# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.eight_bit_reg_shift_r_vlg_vec_tst 
-# Loading work.eight_bit_reg_shift_r_vlg_vec_tst
-# Loading work.eight_bit_reg_shift_r
+# 	eight_bit_reg_shift_l_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.eight_bit_reg_shift_l_vlg_vec_tst 
+# Loading work.eight_bit_reg_shift_l_vlg_vec_tst
+# Loading work.eight_bit_reg_shift_l
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
 # Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading work.eight_bit_reg_shift_r_vlg_sample_tst
-# Loading work.eight_bit_reg_shift_r_vlg_check_tst
+# Loading work.eight_bit_reg_shift_l_vlg_sample_tst
+# Loading work.eight_bit_reg_shift_l_vlg_check_tst
 # Simulation passed !
-# ** Note: $finish    : Waveform3.vwf.vt(279)
-#    Time: 1 us  Iteration: 0  Instance: /eight_bit_reg_shift_r_vlg_vec_tst/tb_out
+# ** Note: $finish    : Waveform4.vwf.vt(279)
+#    Time: 1 us  Iteration: 0  Instance: /eight_bit_reg_shift_l_vlg_vec_tst/tb_out
